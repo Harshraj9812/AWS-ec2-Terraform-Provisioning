@@ -7,7 +7,7 @@ provider "aws" {
 
 # Creating a EC2 instance
 resource "aws_instance" "terraform-ec2" {
-  ami           = "ami-091dccf4e2d272bae" # Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
+  ami           = "ami-0e35ddab05955cf57" # Ubuntu Server 24.04 LTS (HVM) (64-bit (x86)), SSD Volume Type
   instance_type = "t3.micro"
   key_name               = aws_key_pair.terraform_key.key_name # Associate key pair
   vpc_security_group_ids = [aws_security_group.allowed_ports.id] # Use the new SG
