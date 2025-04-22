@@ -89,24 +89,3 @@ resource "aws_security_group" "allowed_ports" {
   }
 }
 # ------------------------------------------------------------------
-
-# Ability to stat and stop the EC2 instance
-# ------------------------------------------------------------------
-# Null Resource to Start the EC2 Instance
-resource "null_resource" "start_ec2_instance" {
-  provisioner "local-exec" {
-    command = "aws ec2 start-instances --instance-ids ${aws_instance.terraform-ec2.id}"
-  }
-}
-# To start the instance using terraform, run:
-# terraform apply -target null_resource.start_ec2_instance
-
-# Null Resource to Stop the EC2 Instance
-resource "null_resource" "stop_ec2_instance" {
-  provisioner "local-exec" {
-    command = "aws ec2 stop-instances --instance-ids ${aws_instance.terraform-ec2.id}"
-  }
-}
-# To stop the instance using terraform, run:
-# terraform apply -target null_resource.stop_ec2_instance
-# ------------------------------------------------------------------

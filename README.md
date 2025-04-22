@@ -141,26 +141,9 @@ chmod 400 ~/.ssh/terraform-ec2
 
 After successful creation, connect using:
 ```bash
-ssh -i ~/.ssh/terraform-ec2 ec2-user@<instance-public-ip>
+ssh -i ~/.ssh/terraform-ec2 ubuntu@<instance-public-ip>
 ```
 Replace `<instance-public-ip>` with your EC2 instance's public IP.
-
-## Managing EC2 Instance
-
-### Start Instance
-```bash
-terraform apply -target null_resource.start_ec2_instance
-```
-
-### Stop Instance
-```bash
-terraform apply -target null_resource.stop_ec2_instance
-```
-
-### Destroy All Resources
-```bash
-terraform destroy
-```
 
 ## Configuration Details
 
