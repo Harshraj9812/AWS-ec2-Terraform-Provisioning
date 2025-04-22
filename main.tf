@@ -25,7 +25,7 @@ resource "aws_instance" "terraform-ec2" {
  }
 
   tags = {
-    Name = "MyTerraformInstance"
+    Name = "Terraform-EC2"
   }
 }
 
